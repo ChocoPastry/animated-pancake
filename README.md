@@ -1,0 +1,2 @@
+# animated-pancake
+Simple caclulator
