@@ -4,6 +4,8 @@
 }
 
 .container {
+    display: flex;
+    justify-content: center;
     padding: 30px;
     width: 100vw;
     height: 100vh;
@@ -22,7 +24,6 @@
     text-align: center;
     border: 2px solid black;
     border-radius: 15px;
-    left: 30%;
     padding: 1.3rem;
     background-color: rgba(128, 128, 128, 0.6);
 }
