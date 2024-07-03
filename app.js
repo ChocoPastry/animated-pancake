@@ -11,8 +11,21 @@ let els = document.querySelectorAll(".el");
 
 let arr = Array.from(els);
 
-arr.forEach((el) => {
+
+const clr = (el) => {
+    el.classList.add("clr");
+    console.log(el.classList.contains("clr"));
+    setTimeout(function () {
+        el.classList.remove("clr")
+    }, 200);
+}
+
+els.forEach((el) => {
     el.addEventListener("click", event => {
+        el.classList.add("blink");
+        setTimeout(function () {
+            el.classList.remove("blink")
+        }, 200);
         if (event.target.innerText == '=') {
             calc = eval(para);
             p.innerText = h2.innerText;
@@ -22,6 +35,7 @@ arr.forEach((el) => {
         else if (event.target.innerText == "DELETE") {
             para = para.substring(0, para.length - 1);
             h2.innerText = para;
+            clr(el);
         }
 
         else if (event.target.innerText == "CLEAR") {
@@ -29,6 +43,7 @@ arr.forEach((el) => {
             calc = 0;
             p.innerText = "";
             h2.innerText = ""
+            clr(el);
         }
 
         else {
